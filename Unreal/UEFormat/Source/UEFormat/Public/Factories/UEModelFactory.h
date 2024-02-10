@@ -17,6 +17,8 @@ class UEFORMAT_API UEModelFactory : public UFactory
 	bool bImport;
 	bool bImportAll;
 
+	static UObject* Import(const FString& Filename, const FString& PackagePath, const FName Name, const EObjectFlags Flags, TMap<FString, FString> MaterialNameToPathMap);
+
 	virtual UObject* FactoryCreateFile(UClass* Class, UObject* Parent, FName Name, EObjectFlags Flags, const FString& Filename, const TCHAR* Params, FFeedbackContext* Warn, bool& bOutOperationCanceled) override;
 
 	UStaticMesh* CreateStaticMesh(UEModelReader& Data, UObject* Parent, EObjectFlags Flags);
